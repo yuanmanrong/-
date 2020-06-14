@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet/less" href="./info.less">
+    <script src="less-2.5.3.min.js"></script>
+    <script>
+        ~function () {
+            let computedRem=function () {
+                let nowWid=document.documentElement.clientWidth;
+                let stanWid=640;
+                if(nowWid>=640){
+                    document.documentElement.style.fontSize='100px';
+                    return;
+                }
+                 document.documentElement.style.fontSize=nowWid/stanWid*100+'px'
+            }
+            computedRem();
+            //窗口大小改变时再执行一遍
+            window.addEventListener('resize',computedRem)
+        }()
+    </script>
+</head>
+<body>
+<main class="main">
+    <!--LOADING-->
+    <section class="loadingBox">
+    <div class="title">
+        <h1>准备好了吗</h1>
+        <h3>coding by Ymr</h3>
+    </div>
+    <div class="progress">
+        <div class="current"></div>
+    </div>
+    </section>
+
+    <!--PHONE-->
+    <section class="phoneBox">
+    <h2>
+        <img src="img/timg4.jpg" alt="">
+        <span>00:00</span>
+    </h2>
+   <div class="answer">
+       <div class="markMove"></div>
+       <a href="javascript:;" class="markLink"></a>
+   </div>
+   <div class="hang">
+       <a href="javascript:;" class="markLink"></a>
+   </div>
+    <audio src="audio/bell.mp3" autoplay loop preload="none" id="bell"></audio>
+    <audio src="audio/say.mp3" autoplay preload="none" id="say"></audio>
+    </section>
+
+    <!--MESSAGE-->
+    <section class="messageBox">
+        <ul class="wrapper clearfix" >
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/ymr.jpg" alt="" class="pic">
+                我想养只猫,就是那种啊啊啊太可爱了8
+            </li>
+            <li class="other">
+                <i class="arrow"></i>
+                <img src="img/osh.jpg" alt="" class="pic">
+                什么(>^ω^<)喵
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/ymr.jpg" alt="" class="pic">
+                我觉得英短特别可爱 蓝白小猫我要被萌化了
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/ymr.jpg" alt="" class="pic">
+                啊啊啊啊啊嗷嗷
+            </li>
+            <li class="other">
+                <i class="arrow"></i>
+                <img src="img/osh.jpg" alt="" class="pic">
+                我也！！！！我刚看了姐姐辱骂杜华女士
+            </li>
+            <li class="self">
+                <i class="arrow"></i>
+                <img src="img/ymr.jpg" alt="" class="pic">
+               get到金晨了可
+            </li>
+            <li class="other">
+                <i class="arrow"></i>
+                <img src="img/osh.jpg" alt="" class="pic">
+                王丽坤也可
+            </li>
+        </ul>
+        <div class="keyboard">
+            <span></span>
+            <a href="javascript:;" class="submit"></a>
+        </div>
+        <audio src="audio/music.mp3" preload="none" loop id="music"></audio>
+    </section>
+</main>
+<script src="zepto.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
